@@ -1,19 +1,33 @@
 import logo from './logo.svg';
 import './App.css';
 import Footer from './Footer';
+import Button from './Button';
+import Tasks from './Tasks';
+import { useState } from 'react';
 
 function App() {
+  const [tasks, setTasks] = useState([
+    {
+      id:1,
+      text:"task 1 with id 1"
+    },
+    {
+      id:2,
+      text:"task 2 with id 2"
+    },
+  ])
+  const redClick = ()=>{
+    console.log("REd button clicked")
+  }
+  const greenClick = ()=>{
+    console.log("Green button clicked")
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <div className='box' id='box1'></div>
-        <div className='box' id='box2'></div>
-        <div className='box' id='box3'></div>
-        <div className='box' id='box4'></div>
-        <div className='box' id='box5'></div>
-        <div className='box' id='box6'></div>
-        <div className='box' id='box7'></div>
-      </header>
+      <h1>Taks App</h1>
+      <Button color='red' text="red button" onClick={redClick}/>
+      <Button color='green' text="green button" onClick={greenClick}/>
+      <Tasks tasks={tasks}></Tasks>
       <Footer name="Sagar R B"/>
     </div>
   );
