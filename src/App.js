@@ -15,6 +15,13 @@ function App() {
       id:2,
       text:"task 2 with id 2"
     },
+    {
+      id:3,
+      text:"task 3 with id 3"
+    },{
+      id:4,
+      text:"task 4 with id 4"
+    }
   ])
   const redClick = ()=>{
     console.log("REd button clicked")
