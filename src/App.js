@@ -22,12 +22,17 @@ function App() {
   const greenClick = ()=>{
     console.log("Green button clicked")
   }
+  const onDelete = (id)=>{
+    setTasks(tasks.filter((task)=>
+      task.id !==id
+    ))
+  }
   return (
     <div className="App">
-      <h1>Taks App</h1>
+      <h1>Tasks App</h1>
       <Button color='red' text="red button" onClick={redClick}/>
       <Button color='green' text="green button" onClick={greenClick}/>
-      <Tasks tasks={tasks}></Tasks>
+      <Tasks tasks={tasks} onClick={onDelete} />
       <Footer name="Sagar R B"/>
     </div>
   );

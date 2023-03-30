@@ -1,11 +1,13 @@
-import React from 'react'
+import {React} from 'react'
+import Task from './Task'
 
-function Tasks({tasks}) {
+
+function Tasks({tasks, onClick}) {
   return (
     <div>
         
      {tasks.map((task)=>(
-        <h2 key={task.id}>{task.text}</h2>
+        <Task key={task.id} ts={task} onClick={onClick} />
      ))}
     </div>
   )
