@@ -45,7 +45,10 @@ function App() {
     )
   }
   const onAdd = (task) =>{
-    console.log(task)
+    const id = Math.floor(Math.random()*10000 + 1)
+    console.log(id)
+    const newOne = {...task, id}
+    setTasks([...tasks, newOne])
   }
   return (
     <div className="App">
